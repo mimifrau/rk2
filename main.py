@@ -22,7 +22,7 @@ class СonductorInOrchestra:
         self.orch_id = orch_id
         self.cond_id = cond_id
 
-def a1_solution(one_to_many):
+def b1_solution(one_to_many):
     arr =  sorted(one_to_many, key=itemgetter(2))
     ans = []
     for el in arr:
@@ -31,7 +31,7 @@ def a1_solution(one_to_many):
     if len(ans) != 0 : return (ans)
     else : return "Оркестров на А нет!"
 
-def a2_solution(one_to_many):
+def b2_solution(one_to_many):
     arr0 = []
     for d in orchestras:
         d_dets = list(filter(lambda i: i[2]==d.name, one_to_many))
@@ -42,7 +42,7 @@ def a2_solution(one_to_many):
     res = sorted(arr0, key=itemgetter(1), reverse=True)
     return res
 
-def a3_solution(many_to_many):
+def b3_solution(many_to_many):
     arr = {}
     for d in orchestras:
         d_emps = list(filter(lambda i: i[2]==d.name, many_to_many))
@@ -102,14 +102,14 @@ def main():
                         for e in conductors
                         if e.id == det_id]
 
-        print('Задание А1')
-        print(a1_solution(one_to_many))
+        print('Задание Б1')
+        print(b1_solution(one_to_many))
 
-        print('\nЗадание А2')
-        print(a2_solution(one_to_many))
+        print('\nЗадание Б2')
+        print(b2_solution(one_to_many))
 
-        print('\nЗадание А3')
-        print(a3_solution(many_to_many))
+        print('\nЗадание Б3')
+        print(b3_solution(many_to_many))
 
 
 main()
