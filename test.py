@@ -35,27 +35,27 @@ class Test_Program(unittest.TestCase):
         СonductorInOrchestra(33, 5),
     ]
 
-    def test_a1(self):
+    def test_b1(self):
         one_to_many = [(p.name, p.date, d.name)
                        for d in orchestras
                        for p in conductors
                        if p.cond_id == d.id]
 
-        self.assertEqual(a1_solution(one_to_many),
+        self.assertEqual(b1_solution(one_to_many),
                          [('Topher Lyndon', 1965, 'Atlanta Symphony Orchestra')])
 
-    def test_a2(self):
+    def test_b2(self):
         one_to_many = [(p.name, p.date, d.name)
                        for d in orchestras
                        for p in conductors
                        if p.cond_id == d.id]
 
-        self.assertEqual(a2_solution(one_to_many),
+        self.assertEqual(b2_solution(one_to_many),
                          [('New York Philharmonic', 1999),
                           ('National Symphony Orchestra', 1982),
                           ('Atlanta Symphony Orchestra', 1965)])
 
-    def test_a3(self):
+    def test_b3(self):
         many_to_many_temp = [(d.name, ed.orch_id, ed.cond_id)
                              for d in orchestras
                              for ed in cio
@@ -66,7 +66,7 @@ class Test_Program(unittest.TestCase):
                         for e in conductors
                         if e.id == cond_id]
 
-        self.assertEqual(a3_solution(many_to_many),
+        self.assertEqual(b3_solution(many_to_many),
                          {'Atlanta Symphony Orchestra': ['Topher Lyndon', 'Topher Lyndon'],
                           'Boston Symphony Orchestra': [],
                           'Cleveland Orchestra': [],
